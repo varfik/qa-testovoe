@@ -55,14 +55,14 @@ abstract public class BaseTest {
         Configuration.timeout = 40_000;
         Configuration.pageLoadTimeout = 180_000;
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--window-size=1920,1080");
+        String remote = System.getenv("SELENIDE_REMOTE");
+        if (remote != null && !remote.isBlank()) {
+            Configuration.remote = remote;
+        }
 
-        Configuration.browserCapabilities = options;
+        String headless = System.getenv("SELENIDE_HEADLESS");
+        if (headless != null) {
+            Configuration.headless = Boolean.parseBoolean(headless);
+        }
     }
-
 }
