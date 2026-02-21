@@ -15,6 +15,11 @@ public class MainPage extends BasePage {
     private final Header header = new Header();
 
     /**
+     * Раздел "Документация"
+     */
+    private final Link documentationLink = new Link($("a[data-qa='main-nav__link-documentation']"));
+
+    /**
      * Конструктор класса
      */
     public MainPage() {
@@ -26,5 +31,12 @@ public class MainPage extends BasePage {
      */
     public Header header() {
         return header;
+    }
+
+    /**
+     * Переход в раздел "Документация"
+     */
+    public Link clickdDcumentationLink() {
+        return documentationLink.open();
     }
 }
