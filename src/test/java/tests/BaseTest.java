@@ -18,7 +18,7 @@ abstract public class BaseTest {
     /**
      * URL главной страницы сайта
      */
-    protected final static String BASE_URL = "https://rutube.ru/";
+    protected final static String BASE_URL = "https://selectel.ru/";
 
     /**
      * Выполнение метода перед каждым запуском тестов
