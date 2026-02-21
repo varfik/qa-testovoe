@@ -65,4 +65,5 @@ abstract public class BaseTest {
             Configuration.headless = Boolean.parseBoolean(headless);
         }
     }
+
 }
