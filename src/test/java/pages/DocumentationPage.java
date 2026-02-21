@@ -1,9 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-
+import com.codeborne.selenide.webdriver.WebDriverConditions;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.webdriver;
+import pages.utils.TabSwitcher;
+
+import java.time.Duration;
 
 /**
  * Страница "Документация"
@@ -27,7 +30,7 @@ public class DocumentationPage extends BasePage {
      * Проверка, что страница открыта
      */
     public DocumentationPage shouldBeOpened() {
-        webdriver().shouldHave(Condition.urlStartingWith(DOCS_URL_PREFIX));
+        webdriver().shouldHave(WebDriverConditions.urlStartingWith(DOCS_URL_PREFIX));
         $("body").shouldBe(Condition.visible);
         return this;
     }

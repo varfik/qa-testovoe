@@ -22,10 +22,4 @@ public class Link extends BaseElement {
         baseElement.shouldBe(Condition.visible).click();
     }
 
-    /**
-     * Получить ссылку
-     */
-    public String getHref() {
-        return baseElement.getAttribute("href");
-    }
 }

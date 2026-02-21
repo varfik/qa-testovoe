@@ -15,7 +15,7 @@ public class OpenDocumentationTest extends BaseTest {
     @Test
     void documentationShouldOpenInNewTab() {
         MainPage mainPage = new MainPage();
-        mainPage.documentationLink().open();
+        mainPage.clickDocumentationLink();
 
         DocumentationPage.switchTo()
                 .shouldBeOpened();

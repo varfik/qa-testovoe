@@ -1,6 +1,7 @@
 package pages;
 
 import pages.elements.Header;
+import pages.elements.Link;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -36,7 +37,7 @@ public class MainPage extends BasePage {
     /**
      * Переход в раздел "Документация"
      */
-    public Link clickdDcumentationLink() {
-        return documentationLink.open();
+    public void clickDocumentationLink() {
+        documentationLink.open();
     }
 }
