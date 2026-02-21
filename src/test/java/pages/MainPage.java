@@ -9,12 +9,21 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class MainPage extends BasePage {
 
+    /**
+     * Верхняя панель страницы
+     */
     private final Header header = new Header();
 
+    /**
+     * Конструктор класса
+     */
     public MainPage() {
         super(MainPage.class, $("body"));
     }
 
+    /**
+     * Метод возращает верхнюю панель
+     */
     public Header header() {
         return header;
     }
