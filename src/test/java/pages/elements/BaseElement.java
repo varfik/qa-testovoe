@@ -17,10 +17,17 @@ public class BaseElement {
     protected final SelenideElement baseElement;
 
     /**
-     * Конструктор базового элемента
+     * Конструктор базового элемента (xpath + attributeValue)
      */
     protected BaseElement(String xpath, String attributeValue) {
         baseElement = $x(String.format(xpath, attributeValue));
+    }
+
+    /**
+     * Новый конструктор (root-элемент)
+     */
+    protected BaseElement(SelenideElement baseElement) {
+        this.baseElement = baseElement;
     }
 
     /**
