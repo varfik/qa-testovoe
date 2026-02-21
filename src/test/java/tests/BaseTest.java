@@ -1,5 +1,5 @@
 package tests;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
@@ -53,6 +53,16 @@ abstract public class BaseTest {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
         Configuration.timeout = 40_000;
+        Configuration.pageLoadTimeout = 180_000;
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--window-size=1920,1080");
+
+        Configuration.browserCapabilities = options;
     }
 
 }
