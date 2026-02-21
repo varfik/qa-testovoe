@@ -16,10 +16,18 @@ public class BasePage {
     protected final Class<? extends BasePage> pageClass;
 
     /**
-     * Конструктор страницы
+     * Конструктор (привязка к div[name*='type'])
      */
     protected BasePage(Class<? extends BasePage> pageClass, String type) {
         basePage = $(String.format(BASE_ELEMENT_XPATH, type));
+        this.pageClass = pageClass;
+    }
+
+    /**
+     * Новый конструктор (root-элемент)
+     */
+    protected BasePage(Class<? extends BasePage> pageClass, SelenideElement root) {
+        this.basePage = root;
         this.pageClass = pageClass;
     }
 
